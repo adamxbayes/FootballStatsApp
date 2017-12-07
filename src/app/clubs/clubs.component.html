@@ -1,0 +1,44 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+</head>
+
+<div class="innerHTML">
+    <div id="innerHeading">
+
+
+        <!-- Possibly use *Ng-repeat statement to create grid-tile child of each element of a team in array -->
+        <p> Choose your club </p>
+        <mat-card>
+            <mat-grid-list cols="5" rowHeight="1:1">
+
+                <mat-grid-tile *ngFor="let club of filteredFootballClubs | async" [value="club.shortName" (click)='selectClub(club.name)'>
+                    
+                    Arsenal </mat-grid-tile>
+                    <!-- Tiles below act as buttons to be worked on. -->
+                <mat-grid-tile> AFC Bournemouth </mat-grid-tile>
+                <mat-grid-tile> Brighton and Hove Albion </mat-grid-tile>
+                <mat-grid-tile> Burnley </mat-grid-tile>
+                <mat-grid-tile> Chelsea </mat-grid-tile>
+                <mat-grid-tile> Crystal Palace </mat-grid-tile>
+                <mat-grid-tile> Everton </mat-grid-tile>
+                <mat-grid-tile> Huddersfield Town </mat-grid-tile>
+                <mat-grid-tile> Leicester City </mat-grid-tile>
+                <mat-grid-tile> Liverpool </mat-grid-tile>
+                <mat-grid-tile> Manchester City </mat-grid-tile>
+                <mat-grid-tile> Manchester United </mat-grid-tile>
+                <mat-grid-tile> Newcastle United </mat-grid-tile>
+                <mat-grid-tile> Southampton </mat-grid-tile>
+                <mat-grid-tile> Stoke City </mat-grid-tile>
+                <mat-grid-tile> Swansea City </mat-grid-tile>
+                <mat-grid-tile> Tottenham Hotspur </mat-grid-tile>
+                <mat-grid-tile> Watford </mat-grid-tile>
+                <mat-grid-tile> West Bromwich Albion </mat-grid-tile>
+                <mat-grid-tile> West Ham </mat-grid-tile>
+            </mat-grid-list>
+
+
+
+        </mat-card>
+
+    </div>
+</div>
