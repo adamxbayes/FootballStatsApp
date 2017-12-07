@@ -21,7 +21,7 @@ body {
   
 }
 #innerHeading p{
-  font-family: 'Shrikhand', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 45px;
   text-align: center;
 }
@@ -58,5 +58,16 @@ body {
 
 mat-grid-tile {
   background: rgb(20, 199, 154);
+  font-family: 'Bungee', cursive;
+  font-size: 75%;
+  
 }
+.mat-grid-tile :hover {
 
+  color: #FFFFFF;
+}
+#go-to-team {
+
+float: right;
+
+}

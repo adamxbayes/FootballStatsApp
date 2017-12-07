@@ -1,5 +1,5 @@
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 </head>
 
 <div class="innerHTML">
@@ -11,16 +11,22 @@
         <mat-card>
             <mat-grid-list cols="5" rowHeight="1:1">
 
-                <mat-grid-tile *ngFor="let club of filteredFootballClubs | async" [value="club.shortName" (click)='selectClub(club.name)'>
-                   {{ club.shortName }}
-                   </mat-grid-tile>
-                    <!-- Tiles below act as buttons to be worked on. -->
+                <mat-grid-tile *ngFor="let club of footballTeams"(click)="selectClub(club.id)">
+
+                    <span>
+                         {{club.shortName}}
+                         
+                 </span>
+
+                </mat-grid-tile>
+
+            
               
             </mat-grid-list>
 
 
 
         </mat-card>
-
+        <button mat-button id="go-back" (click)="returnToLeagues()"> Return to league selection </button>        
     </div>
 </div>
