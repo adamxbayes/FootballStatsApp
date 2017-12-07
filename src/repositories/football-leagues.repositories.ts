@@ -13,6 +13,7 @@ export class FootballLeaguesRepository {
 
     private FootballCompetitions: FootballLeagues[] = [];
 
+    
     constructor(private _api: FootballApi) { } 
 
     public getAll(): Observable<FootballLeagues[]> {
@@ -28,11 +29,4 @@ export class FootballLeaguesRepository {
             return soccerLeagues;
         });
     }
-
-    public getTeamByLeagueId(leagueId: number): Observable<any> {
-        return this._api.get(`competitions/${leagueId}/teams`).map(result=>{
-            console.log(result);
-            return result;
-        })
-     } 
 }

@@ -1,33 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { MatGridListModule } from '@angular/material';
 import { SearchLeagueComponent } from '../search-leagues/search-leagues.component';
-import { FootballClubs } from '../../models/football-team-model';
+import { FootballTeam } from '../../models/football-team-model';
 import { FootballClubsRepository } from '../../repositories/football-teams.repository';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Route } from '@angular/router/src/config';
 import { ActivatedRoute } from '@angular/router';
+import { FootballLeaguesRepository } from '../../repositories/football-leagues.repositories';
 
 @Component({
   selector: 'app-clubs',
   templateUrl: './clubs.component.html',
   styleUrls: ['./clubs.component.css']
 })
-
-
-
-
-//Need to grab short name of each club using the Football clubs constructor
-
 export class ClubsComponent implements OnInit {
 
+  private footballTeams: FootballTeam[];
+  private leagueId: number;
 
-  filteredFootballClubs: Observable<any[]>;
-  leagueId: number;
-
-  
-  constructor(private footballClubRepository: FootballClubsRepository, private _router: Router, private _route: ActivatedRoute) {
+  constructor(
+    private footballClubsRepository: FootballClubsRepository,
+    private _router: Router,
+    private _route: ActivatedRoute) {
   }
 
 
@@ -39,8 +35,12 @@ export class ClubsComponent implements OnInit {
   ngOnInit() {
     this._route.params.subscribe(p => {
       this.leagueId = Number(p['id']);
-  });
-    }
+
+      this.footballClubsRepository.getTeamsByLeagueId(this.leagueId).subscribe(result => {
+        console.log(result);
+      });
+    });
+  }
 }
 
 

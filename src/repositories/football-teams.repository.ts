@@ -6,31 +6,27 @@ import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 import { forEach } from '@angular/router/src/utils/collection';
 import { FootballApi } from './football-api';
-import { FootballClubs } from '../models/football-team-model';
+import { FootballTeam } from '../models/football-team-model';
 
 @Injectable()
 
 export class FootballClubsRepository {
 
-    private footballClubs: FootballClubs[] = [];
-
-
     constructor(private _api: FootballApi) { }
-    //Returns all premier league clubs, with their name, short code, abbreviation and crest image. 
-    public getAll(): Observable<FootballClubs[]> {
-        return this._api.get('competitions/445/').map(result => {
-            let soccerClubs = [];
 
-            result.forEach(club => {
+    public getTeamsByLeagueId(leagueId: number): Observable<FootballTeam[]> {
+        return this._api.get(`competitions/${leagueId}/teams`).map(result => {
+            let soccerClubs = [];
+            console.log(result);
+
+            result.teams.forEach(club => {
                 soccerClubs.push(
-                    new FootballClubs(club.name, club.code, club.shortName, club.crestURL)
+                    new FootballTeam(club.name, club.code, club.shortName, club.crestUrl, club._links.players.href)
                 );
             });
-
 
             return soccerClubs;
         });
     }
-
 }
 
