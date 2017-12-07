@@ -12,7 +12,7 @@
             <mat-grid-list cols="5" rowHeight="1:1">
 
                 <mat-grid-tile *ngFor="let club of filteredFootballClubs | async" [value="club.shortName" (click)='selectClub(club.name)'>
-                   
+                   {{ club.shortName }}
                    </mat-grid-tile>
                     <!-- Tiles below act as buttons to be worked on. -->
               

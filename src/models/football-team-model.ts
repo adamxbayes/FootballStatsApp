@@ -1,9 +1,11 @@
 export class FootballTeam {
 
     constructor(
+        public id: number,
         public shortName: string,
         public code: string,
         public name: string,
         public crestURL: string,
-        public playersLink: string) { }
+        public teamLink: string
+    ) { }
 }
