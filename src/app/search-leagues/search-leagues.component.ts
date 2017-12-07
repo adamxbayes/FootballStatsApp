@@ -58,7 +58,7 @@ export class SearchLeagueComponent implements OnInit {
   }
   public selectLeague(id: number) : void {
 
-     this.footballLeagueRepository.getTeamByLeagueId(id).subscribe(result => {
+     //this.footballLeagueRepository.getTeamByLeagueId(id).subscribe(result => {
 
      });
 
