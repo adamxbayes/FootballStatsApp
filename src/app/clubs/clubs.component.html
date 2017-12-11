@@ -1,32 +1,32 @@
 <head>
-        <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 </head>
 
 <div class="innerHTML">
     <div id="innerHeading">
 
-
-        <!-- Possibly use *Ng-repeat statement to create grid-tile child of each element of a team in array -->
         <p> Choose your club </p>
+     
+
+
         <mat-card>
+
             <mat-grid-list cols="5" rowHeight="1:1">
 
-                <mat-grid-tile *ngFor="let club of footballTeams"(click)="selectClub(club.id)">
+                <mat-grid-tile *ngFor="let club of footballTeams" (click)="selectClub(club.id)">
 
-                    <span>
-                         {{club.shortName}}
-                         
-                 </span>
+                    <img src="{{club.crestURL}}" alt="{{club.shortName}}" class="crest" />
 
                 </mat-grid-tile>
 
-            
-              
+
+
             </mat-grid-list>
 
 
 
         </mat-card>
-        <button mat-button id="go-back" (click)="returnToLeagues()"> Return to league selection </button>        
+        <button mat-button id="go-back" (click)="returnToLeagues()"> Return to league selection </button>
+
     </div>
 </div>

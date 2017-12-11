@@ -18,7 +18,7 @@ import { List } from 'linqts';
 export class SearchLeagueComponent implements OnInit {
   filteredFootballCompetitions: Observable<any[]>;
   stateCtrl: FormControl;
-  selectedLeagueCaption: string;
+  public selectedLeagueCaption: string;
 
   //Referencing the models which store instances of objects (drop down lists)
   FootballCompetitions: FootballLeagues[] = [];
@@ -56,12 +56,7 @@ export class SearchLeagueComponent implements OnInit {
 
 
   }
-  public selectLeague(id: number) : void {
-
-     //this.footballLeagueRepository.getTeamByLeagueId(id).subscribe(result => {
-
-     });
+ 
 
   }
 
-}

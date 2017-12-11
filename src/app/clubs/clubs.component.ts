@@ -26,16 +26,21 @@ export class ClubsComponent implements OnInit {
     private footballClubsRepository: FootballClubsRepository,
     private _router: Router,
     private _route: ActivatedRoute) {
+  
   }
-
   public selectClub(id: Number): void {
     this._router.navigate([`./teams/${id}`]);
 
   }
   public returnToLeagues(){
 
-    
+    this._router.navigate(['']);
   }
+  public goToStats(){
+    
+        this._router.navigate(['teams/:id']);
+        
+      }
   ngOnInit() {
     this._route.params.subscribe(p => {
       this.leagueId = Number(p['id']);
