@@ -8,7 +8,6 @@ import { FootballApi } from './football-api';
 import { FootballTeam } from '../models/football-team-model';
 
 @Injectable()
-
 export class FootballPlayersRepository {
 
     private footballPlayers: ClubPlayers[] = [];
@@ -20,8 +19,8 @@ export class FootballPlayersRepository {
         return this._api.get(`teams/${ClubId}/players`).map(result => {
             let soccerPlayers = [];
             console.log(result);
-
-            result.forEach(club => {
+        
+            result.players.forEach(player => {
                 soccerPlayers.push(
                     new ClubPlayers
                         (
@@ -32,7 +31,7 @@ export class FootballPlayersRepository {
                         player.nationality,
                         player.contractUntil)
                         )
-            });
+            console.log(ClubPlayers)});
             return soccerPlayers;
 
 

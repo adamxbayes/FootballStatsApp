@@ -16,12 +16,15 @@ import { FootballApi } from '../repositories/football-api';
 import { ClubsComponent } from './clubs/clubs.component';
 import { StatsComponent } from './stats/stats.component';
 import { FootballClubsRepository } from '../repositories/football-teams.repository';
+import { FootballPlayersRepository } from '../repositories/football-players.repositories';
+import { PlayersComponent } from './players/players.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RoutableComponents
+    RoutableComponents,
+    PlayersComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { FootballClubsRepository } from '../repositories/football-teams.reposito
   providers: [
     FootballApi,
     FootballLeaguesRepository,
-    FootballClubsRepository
+    FootballClubsRepository,
+    FootballPlayersRepository
   ],
   bootstrap: [AppComponent]
 })
