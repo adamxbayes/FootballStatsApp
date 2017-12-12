@@ -12,6 +12,7 @@ body {
      
 
 }
+
 .ing-card{
 
   background: rgb(201, 208, 211);
@@ -21,7 +22,7 @@ body {
 }
 #innerHeading p{
   font-family: 'Bungee', cursive;
-  font-size: 45px;
+  font-size: 35px;
   text-align: center;
 }
 

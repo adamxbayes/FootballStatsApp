@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
@@ -22,15 +22,15 @@ export class SearchLeagueComponent implements OnInit {
 
   //Referencing the models which store instances of objects (drop down lists)
   FootballCompetitions: FootballLeagues[] = [];
-  
- 
+
+
 
   //observable...something to do with making continuous requests and not reloading full page?
 
   myControl: FormControl = new FormControl();
   //the export part above, allows this class to be imported.
 
-  public goToClubs(){
+  public goToClubs() {
     var selectedLeague = new List<FootballLeagues>(this.FootballCompetitions).First(league => league.caption == this.selectedLeagueCaption);
 
     this._router.navigate([`./clubs/${selectedLeague.id}`]);
@@ -56,7 +56,7 @@ export class SearchLeagueComponent implements OnInit {
 
 
   }
- 
 
-  }
+
+}
 

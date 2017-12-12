@@ -22,16 +22,15 @@ export class PlayersComponent implements OnInit {
     private leagueId: number;
     private selectedClubId: number;
     private selectedPlayer: string;
-    playerCtrl: FormControl;
     public selectedPlayerName: string;
     
     footballers: ClubPlayers[] = [];    
    
     constructor(private footballPlayersRepository: FootballPlayersRepository, private _router: Router,
         private _route: ActivatedRoute) {
-            this.playerCtrl = new FormControl();
+            
         }
-        
+        playerCtrl: FormControl = new FormControl();
 
     /*filterFootballPlayers(name: string){
             return this.footballPlayers.filter(player=>
@@ -54,7 +53,7 @@ ngOnInit(){
 selectPlayer(){
 var selectedPlayer = new List <ClubPlayers>(this.footballers).First(player => player.name == this.selectedPlayerName);
     
-
+return (selectedPlayer.name, selectedPlayer.contractUntil, selectedPlayer.dateOfBirth, selectedPlayer.nationality, selectedPlayer.position);
 }
 
 }

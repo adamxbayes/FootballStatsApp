@@ -1,35 +1,37 @@
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 </head>
 
 <div class="innerHTML">
-    <div id="innerHeading">
+  <div id="innerHeading">
 
-        <p> Choose a league </p>
-        <mat-card>
-          <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Enter a league" id = "leagueSelection" aria-label="league" [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="selectedLeagueCaption">
-              <mat-hint *ngIf="!selectedLeagueCaption">
-                A league is <strong>required</strong>
-              </mat-hint>
-              <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let league of filteredFootballCompetitions | async" [value]="league.caption" (click)='selectLeague(league.id)'>
-                
-                  <span>{{ league.caption | uppercase }}</span>
-               
-                </mat-option>
+    <p> Choose a league </p>
+    <mat-card>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Enter a league" id="leagueSelection" aria-label="league" [matAutocomplete]="auto" [formControl]="stateCtrl"
+            [(ngModel)]="selectedLeagueCaption">
+          <mat-hint *ngIf="!selectedLeagueCaption">
+            A league is
+            <strong>required</strong>
+          </mat-hint>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let league of filteredFootballCompetitions | async" [value]="league.caption" (click)='selectLeague(league.id)'>
 
-              </mat-autocomplete>
-            </mat-form-field>
-  
-  
-  
-  
+              <span>{{ league.caption | uppercase }}</span>
+
+            </mat-option>
+
+          </mat-autocomplete>
+        </mat-form-field>
+
+
+
+
       </form>
-    
-      <button mat-button id="go-to-clubs" type="submit" (click)='goToClubs()'> Go to clubs</button>    
-        </mat-card>
 
-    </div>
+      <button mat-button id="go-to-clubs" type="submit" (click)='goToClubs()'> Go to clubs</button>
+    </mat-card>
+
+  </div>
 </div>

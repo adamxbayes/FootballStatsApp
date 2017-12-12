@@ -32,11 +32,6 @@ body {
     width: 100%;
 }
 
-.hide-glassware p {
-    font-family: 'Shrikhand', cursive;
-    padding: 5px;
-    
-}
  .mat-opton :hover {
      background-color: #ae8b9c;
  }
@@ -44,6 +39,7 @@ body {
   .example-full-width {
     width: 100%;
   }
+
 
   
 

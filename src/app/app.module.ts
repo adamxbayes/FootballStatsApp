@@ -24,7 +24,8 @@ import { PlayersComponent } from './players/players.component';
   declarations: [
     AppComponent,
     RoutableComponents,
-    PlayersComponent
+    PlayersComponent,
+    
   ],
   imports: [
     BrowserModule,

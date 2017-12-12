@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FixtureModel } from '../../models/football-fixtures-model'
 
 @NgModule({
   imports: [
@@ -7,4 +8,10 @@ import { CommonModule } from '@angular/common';
   ],
   declarations: []
 })
-export class FixturesModule { }
+export class FixturesModule 
+{
+
+
+
+
+ }
