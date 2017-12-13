@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { PlayersComponent } from '../players/players.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material';
+
 
 @Component({
   selector: 'app-stats',

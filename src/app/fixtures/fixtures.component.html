@@ -1,2 +1,14 @@
-<li>fixture1</li>
-<li>fixture2</li>
+<mat-list role="list">
+
+<mat-list-item *ngFor="let fixture of footballFixtures | async">
+
+{{ fixture.homeTeam }}
+{{ fixture.awayTeam}}
+{{ fixture.homeScore }}
+{{ fixture.awayScore }}
+
+</mat-list-item>
+
+
+
+</mat-list>

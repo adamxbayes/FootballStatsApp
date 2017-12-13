@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatGridListModule, MatGridTile, MatExpansionModule, MatExpansionPanelActionRow } from '@angular/material';
+import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatListModule, MatGridListModule, MatGridTile, MatExpansionModule, MatExpansionPanelActionRow } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -39,6 +39,7 @@ import { FixturesModule } from './fixtures/fixtures.component';
     MatInputModule,
     MatDatepickerModule,
     MatGridListModule,
+    MatListModule,
     MatCardModule,
     MatButtonModule,
     MatSlideToggleModule,
