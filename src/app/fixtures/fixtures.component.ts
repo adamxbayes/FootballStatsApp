@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FixtureModel } from '../../models/football-fixtures-model'
 
@@ -7,6 +7,12 @@ import { FixtureModel } from '../../models/football-fixtures-model'
     CommonModule
   ],
   declarations: []
+})
+
+@Component({
+  selector: 'app-fixtures',
+  templateUrl: './fixtures.component.html',
+  styleUrls: ['./fixtures.component.css']
 })
 export class FixturesModule 
 {

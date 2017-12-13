@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { PlayersComponent } from '../players/players.component';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @Component({
   selector: 'app-stats',
@@ -19,6 +19,10 @@ export class StatsComponent implements OnInit {
   public returnToLeagues() {
 
     this._router.navigate(['']);
+  }
+  public goToClubs(){
+'clubs/:id'
+    this._router.navigate(['clubs/:id']);
   }
 
 }

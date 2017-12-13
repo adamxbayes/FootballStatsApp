@@ -11,6 +11,7 @@ import { MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule, RoutableComponents } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { FootballLeaguesRepository } from '../repositories/football-leagues.repositories';
+import { FootballFixturesRepository } from '../repositories/football-fixtures.repositories';
 import { HttpModule } from '@angular/http';
 import { FootballApi } from '../repositories/football-api';
 import { ClubsComponent } from './clubs/clubs.component';
@@ -18,6 +19,7 @@ import { StatsComponent } from './stats/stats.component';
 import { FootballClubsRepository } from '../repositories/football-teams.repository';
 import { FootballPlayersRepository } from '../repositories/football-players.repositories';
 import { PlayersComponent } from './players/players.component';
+import { FixturesModule } from './fixtures/fixtures.component';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { PlayersComponent } from './players/players.component';
     AppComponent,
     RoutableComponents,
     PlayersComponent,
+    FixturesModule
     
   ],
   imports: [
@@ -50,7 +53,8 @@ import { PlayersComponent } from './players/players.component';
     FootballApi,
     FootballLeaguesRepository,
     FootballClubsRepository,
-    FootballPlayersRepository
+    FootballPlayersRepository,
+    FootballFixturesRepository
   ],
   bootstrap: [AppComponent]
 })

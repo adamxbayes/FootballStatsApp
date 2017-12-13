@@ -9,7 +9,7 @@
       <!--  <p>  Your selected league is : {{ selectedLeague.caption }}</p> -->
         <mat-card>
 
-            <mat-grid-list cols="5" rowHeight="1:1" [(ngModel)]="selectedLeague">
+            <mat-grid-list cols="5" rowHeight="1:1">
 
                 <mat-grid-tile *ngFor="let club of footballTeams" (click)="selectClub(club.id)">
 

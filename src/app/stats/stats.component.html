@@ -8,28 +8,39 @@
 
         <!-- Possibly use *Ng-repeat statement to create grid-tile child of each element of a team in array -->
         <p> Your teams statistics </p>
-        <mat-card id="players">
+        <mat-accordion>
+            <mat-card id="players">
 
 
-            <p> Players </p>
-            <app-players> </app-players>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header id="playersDropDown"> Players </mat-expansion-panel-header>
+                    
+                    <app-players> </app-players>
 
-        </mat-card>
-        <mat-card id="fixtures">
+                </mat-expansion-panel>
 
-            <p> Fixtures </p>
+            </mat-card>
+            <mat-card id="fixtures">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header id="fixturesDropDown"> Fixtures </mat-expansion-panel-header>
 
-        </mat-card>
-        <mat-card id="table">
-            <p> League Table </p>
-
-
-        </mat-card>
+                    <app-fixtures></app-fixtures>
+                </mat-expansion-panel>
 
 
+            </mat-card>
+            <mat-card id="table">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header id="tableDropDown"> Table </mat-expansion-panel-header>
+                </mat-expansion-panel>
+            </mat-card>
+
+        </mat-accordion>
 
 
         <button mat-button id="go-back" (click)="returnToLeagues()"> Return to league selection </button>
+
+        <button mat-button id="go-clubs" (click)="returnToClubs()"> Return to club selection </button>
     </div>
 
 </div>

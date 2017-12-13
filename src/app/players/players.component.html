@@ -1,6 +1,6 @@
-<mat-card>
-   
-    
+<mat-card id = "playerCard">
+
+
     <mat-form-field>
         <mat-select placeholder="Select a player" [(ngModel)]="selectedPlayer">
 
@@ -20,18 +20,13 @@
     </mat-form-field>
 
 
-    
-    <p>
-        Player: {{ selectedPlayer?.name }},
-    <br>
-        Nationality {{selectedPlayer?.nationality}},
-    <br>
-        Wears No: {{selectedPlayer?.jerseyNumber}},
-    <br>
-        He is a: {{selectedPlayer?.position}},
-    <br>
-        Contract runs until: {{selectedPlayer?.contractUntil}},
-    <br>
-        Birthday is on: {{selectedPlayer?.dateOfBirth}},
+
+    <p id="playerStats">
+         {{ selectedPlayer?.name }}
+        <br> He is from {{selectedPlayer?.nationality}},
+        <br> Wears No: {{selectedPlayer?.jerseyNumber}},
+        <br> He is a {{selectedPlayer?.position}},
+        <br> Contract runs until: {{selectedPlayer?.contractUntil}},
+        <br> Birthday is on {{selectedPlayer?.dateOfBirth}},
     </p>
-    
+</mat-card>
