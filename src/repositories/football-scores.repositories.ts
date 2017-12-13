@@ -14,9 +14,7 @@ export class FixtureRepository {
 
     constructor(private _api: FootballApi){ }
 
-    public getFixturesByTeam(ClubId: Number): Observable<FixtureModel[]>
-    {
-        
-    }
+    
+    
     
 }

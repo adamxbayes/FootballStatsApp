@@ -41,9 +41,13 @@ body {
 }
 .mat-card {
   background-color: #000000;
+  max-width: 50%;
+  max-height: 50%;
+  margin: auto;
 }
+
 mat-grid-list {
-  
+
 }
 
 mat-grid-tile {

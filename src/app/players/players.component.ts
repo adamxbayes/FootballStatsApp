@@ -8,6 +8,8 @@ import { List } from 'linqts';
 import { FootballPlayersRepository } from '../../repositories/football-players.repositories';
 import { ClubPlayers } from '../../models/football-players-model';
 import { FootballTeam } from '../../models/football-team-model';
+import { MatExpansionModule } from '@angular/material'
+
 
 @Component({
     selector: 'app-players',
@@ -21,8 +23,9 @@ export class PlayersComponent implements OnInit {
     public footballPlayers: Observable<ClubPlayers[]>;
     private leagueId: number;
     private selectedClubId: number;
-    private selectedPlayer: string;
+    private selectedPlayer: ClubPlayers;
     public selectedPlayerName: string;
+    
     
     footballers: ClubPlayers[] = [];    
    
@@ -49,11 +52,9 @@ ngOnInit(){
 
     })
 }
-
-selectPlayer(){
-var selectedPlayer = new List <ClubPlayers>(this.footballers).First(player => player.name == this.selectedPlayerName);
+selectPlayer(ClubPlayers){
+    console.log(this.selectedPlayer);
     
-return (selectedPlayer.name, selectedPlayer.contractUntil, selectedPlayer.dateOfBirth, selectedPlayer.nationality, selectedPlayer.position);
 }
 
 }

@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatGridListModule, MatGridTile } from '@angular/material';
+import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatGridListModule, MatGridTile, MatExpansionModule, MatExpansionPanelActionRow } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
-
+import { MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule, RoutableComponents } from './app-routing.module';
-import {RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FootballLeaguesRepository } from '../repositories/football-leagues.repositories';
 import { HttpModule } from '@angular/http';
 import { FootballApi } from '../repositories/football-api';
@@ -42,7 +42,9 @@ import { PlayersComponent } from './players/players.component';
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    MatDialogModule,
+    MatExpansionModule
   ],
   providers: [
     FootballApi,
