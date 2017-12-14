@@ -28,17 +28,18 @@ export class FixturesModule implements OnInit{
   fixtures: FixtureModel[] = [];
   public footballFixtures: Observable<FixtureModel[]>;
   public selectedClubId: Number;
-
+  public teamFixtures: Number;
   constructor(private footballFixtureRepository: FootballFixturesRepository, private _router: Router, private _route: ActivatedRoute) { }
 
+  myControl: FormControl = new FormControl();
+
+  
 
   ngOnInit() {
 
     this._route.params.subscribe(p => {
       this.selectedClubId = Number(p['id']);
       this.footballFixtures = this.footballFixtureRepository.getFixturesByTeam(this.selectedClubId);
-
-
     })
   }
 

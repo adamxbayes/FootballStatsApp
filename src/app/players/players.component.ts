@@ -35,12 +35,6 @@ export class PlayersComponent implements OnInit {
     }
     playerCtrl: FormControl = new FormControl();
 
-    /*filterFootballPlayers(name: string){
-            return this.footballPlayers.filter(player=>
-            player.name.toLowerCase().indexOf(name.toLowerCase()) === 0
-        }
-  
-    */
 
     ngOnInit() {
 

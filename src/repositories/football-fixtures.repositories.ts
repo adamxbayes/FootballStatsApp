@@ -21,19 +21,21 @@ export class FootballFixturesRepository {
             console.log(result);
 
             result.fixtures.forEach(fixture => {
+
                 soccerFixtures.push(
                     new FixtureModel
                     (
                         fixture.date,
+                        fixture.status === 'FINISHED',
                         fixture.matchday,
-                        fixture.homeTeam,
-                        fixture.awayTeam,
-                        fixture.homeScore,
-                        fixture.awayScore,
-                        fixture.finished)
-                    )
-                    console.log(FixtureModel)});
-                    return soccerFixtures;
+                        fixture.homeTeamName,
+                        fixture.awayTeamName,
+                        fixture.result.goalsHomeTeam,
+                        fixture.result.goalsAwayTeam,
+                    ));
+                });
+                
+                return soccerFixtures;
             })
         }
 
