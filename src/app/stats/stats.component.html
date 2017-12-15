@@ -11,7 +11,6 @@
         <mat-accordion>
             <mat-card id="players">
 
-
                 <mat-expansion-panel>
                     <mat-expansion-panel-header id="playersDropDown"> Players </mat-expansion-panel-header>
                     
@@ -24,7 +23,7 @@
                 <mat-expansion-panel>
                     <mat-expansion-panel-header id="fixturesDropDown"> Fixtures </mat-expansion-panel-header>
 
-                    <app-fixtures></app-fixtures>
+                    <app-fixtures> </app-fixtures>
                 </mat-expansion-panel>
 
 
@@ -32,7 +31,7 @@
             <mat-card id="table">
                 <mat-expansion-panel>
                     <mat-expansion-panel-header id="tableDropDown"> Table </mat-expansion-panel-header>
-                    <app-standings></app-standings>
+                    <app-standings [leagueId]="leagueId"> </app-standings>
                 </mat-expansion-panel>
             </mat-card>
 

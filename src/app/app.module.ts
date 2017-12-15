@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CdkTableModule } from '@angular/cdk/table';
 import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatListModule, MatGridListModule, MatGridTile, MatExpansionModule, MatExpansionPanelActionRow } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -23,7 +24,6 @@ import { FootballPlayersRepository } from '../repositories/football-players.repo
 import { PlayersComponent } from './players/players.component';
 import { FixturesModule } from './fixtures/fixtures.component';
 import { StandingsComponent } from './standings/standings.component';
-import { LeagueStandings } from './standings/standings.component';
 
 
 @NgModule({
@@ -54,7 +54,8 @@ import { LeagueStandings } from './standings/standings.component';
     HttpModule,
     MatDialogModule,
     MatExpansionModule,
-    MatTableModule
+    MatTableModule,
+    CdkTableModule
   ],
   providers: [
     FootballApi,

@@ -39,7 +39,7 @@ export class PlayersComponent implements OnInit {
     ngOnInit() {
 
         this._route.params.subscribe(p => {
-            this.selectedClubId = Number(p['id']);
+            this.selectedClubId = Number(p['teamId']);
             this.footballPlayers = this.footballPlayersRepository.getPlayersByTeam(this.selectedClubId);
 
         })

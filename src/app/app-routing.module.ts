@@ -10,7 +10,7 @@ import { StatsComponent } from './stats/stats.component';
 const routes: Routes = [
     { path: '', component: SearchLeagueComponent },
     { path: 'clubs/:id', component: ClubsComponent },
-    { path: 'teams/:id', component: StatsComponent }
+    { path: 'teams/:teamId/league/:leagueId', component: StatsComponent }
 
 
 ];

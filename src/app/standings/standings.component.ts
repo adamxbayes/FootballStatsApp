@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableModule, MatTableDataSource} from '@angular/material/table';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { FootballStandingsRepository } from '../../repositories/football-standings.repositories';
-import { FootballStandings } from '../../models/football-standings-model';
+import { FootballClubsRepository } from '../../repositories/football-teams.repository';
+import { FootballStandings, Standings } from '../../models/football-standings-model';
 import { NumberValueAccessor } from '@angular/forms/src/directives/number_value_accessor';
 
 @Component({
@@ -12,28 +13,22 @@ import { NumberValueAccessor } from '@angular/forms/src/directives/number_value_
   templateUrl: './standings.component.html',
   styleUrls: ['./standings.component.css']
 })
+
 export class StandingsComponent implements OnInit {
 
-displayedColumns = ['position','teamName','crestUrI','playedGames','points','goals','goalsAgainst', 'goalsDifference','wins','draws','losses'];
-dataSource = new MatTableDataSource<LeagueStandings> (TABLE_DATA); // Table_DATA Refers to the returning data from the http request
+  @Input()
+  leagueId: Number;
+
+  displayedColumns = ['position', 'teamName', 'crestURI', 'playedGames', 'goals', 'goalsAgainst', 'goalDifference', 'wins', 'draws', 'losses', 'points'];
+
+  dataSource: MatTableDataSource<Standings>;
+
+  constructor(
+    private footballStandingsRepository: FootballStandingsRepository) { }
 
   ngOnInit() {
+    this.footballStandingsRepository.getStandingsByLeague(this.leagueId).subscribe(result => {
+      this.dataSource = new MatTableDataSource<Standings>(result);
+    });
   }
-
 }
-
-export interface LeagueStandings {
-  
-      position: Number;
-      teamName: String;
-      crestUrI: String;
-      playedGames: Number;
-      points: Number;
-      goals: Number;
-      goalsAgainst: Number;
-      goalsDifference: Number;
-      wins: Number;
-      draws: Number;
-      losses: Number;
-  
-    }

@@ -31,7 +31,7 @@ export class ClubsComponent implements OnInit {
 
   }
   public selectClub(id: Number): void {
-    this._router.navigate([`./teams/${id}`]);
+    this._router.navigate([`./teams/${id}/league/${this.leagueId}`]);
 
   }
   public returnToLeagues() {

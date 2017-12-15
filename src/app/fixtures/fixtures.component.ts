@@ -38,7 +38,7 @@ export class FixturesModule implements OnInit{
   ngOnInit() {
 
     this._route.params.subscribe(p => {
-      this.selectedClubId = Number(p['id']);
+      this.selectedClubId = Number(p['teamId']);
       this.footballFixtures = this.footballFixtureRepository.getFixturesByTeam(this.selectedClubId);
     })
   }
