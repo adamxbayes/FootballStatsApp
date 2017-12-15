@@ -12,7 +12,6 @@ import {MatListModule} from '@angular/material';
 })
 export class StatsComponent implements OnInit {
   [x: string]: any;
-
   constructor(private _router: Router, private _route: ActivatedRoute) { }
 
   ngOnInit() {

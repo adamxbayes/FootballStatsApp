@@ -32,6 +32,7 @@
             <mat-card id="table">
                 <mat-expansion-panel>
                     <mat-expansion-panel-header id="tableDropDown"> Table </mat-expansion-panel-header>
+                    <app-standings></app-standings>
                 </mat-expansion-panel>
             </mat-card>
 
@@ -40,7 +41,7 @@
 
         <button mat-button id="go-back" (click)="returnToLeagues()"> Return to league selection </button>
 
-        <button mat-button id="go-clubs" (click)="returnToClubs()"> Return to club selection </button>
+        <button mat-button id="go-to-clubs" type="submit" (click)='goToClubs()'> Go to clubs</button>
     </div>
 
 </div>

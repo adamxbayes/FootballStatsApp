@@ -8,10 +8,12 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 import { MatDialogModule} from '@angular/material/dialog';
+import { MatTableModule} from '@angular/material/table';
 import { AppRoutingModule, RoutableComponents } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { FootballLeaguesRepository } from '../repositories/football-leagues.repositories';
 import { FootballFixturesRepository } from '../repositories/football-fixtures.repositories';
+import { FootballStandingsRepository } from '../repositories/football-standings.repositories';
 import { HttpModule } from '@angular/http';
 import { FootballApi } from '../repositories/football-api';
 import { ClubsComponent } from './clubs/clubs.component';
@@ -20,6 +22,8 @@ import { FootballClubsRepository } from '../repositories/football-teams.reposito
 import { FootballPlayersRepository } from '../repositories/football-players.repositories';
 import { PlayersComponent } from './players/players.component';
 import { FixturesModule } from './fixtures/fixtures.component';
+import { StandingsComponent } from './standings/standings.component';
+import { LeagueStandings } from './standings/standings.component';
 
 
 @NgModule({
@@ -27,7 +31,8 @@ import { FixturesModule } from './fixtures/fixtures.component';
     AppComponent,
     RoutableComponents,
     PlayersComponent,
-    FixturesModule
+    FixturesModule,
+    StandingsComponent
     
   ],
   imports: [
@@ -48,14 +53,16 @@ import { FixturesModule } from './fixtures/fixtures.component';
     ReactiveFormsModule,
     HttpModule,
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule
   ],
   providers: [
     FootballApi,
     FootballLeaguesRepository,
     FootballClubsRepository,
     FootballPlayersRepository,
-    FootballFixturesRepository
+    FootballFixturesRepository,
+    FootballStandingsRepository
   ],
   bootstrap: [AppComponent]
 })
