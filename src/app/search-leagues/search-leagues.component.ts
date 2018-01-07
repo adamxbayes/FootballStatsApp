@@ -21,7 +21,7 @@ export class SearchLeagueComponent implements OnInit {
   public selectedLeagueCaption: string;
 
   //Referencing the models which store instances of objects (drop down lists)
-  FootballCompetitions: FootballLeagues[] = [];
+  public FootballCompetitions: FootballLeagues[] = [];
 
 
 
@@ -31,12 +31,13 @@ export class SearchLeagueComponent implements OnInit {
   //the export part above, allows this class to be imported.
 
   public goToClubs() {
-    var selectedLeague = new List<FootballLeagues>(this.FootballCompetitions).First(league => league.caption == this.selectedLeagueCaption);
+    var selectedLeague = new List<FootballLeagues>(this.FootballCompetitions)
+      .First(league => league.caption == this.selectedLeagueCaption);
 
     this._router.navigate([`./clubs/${selectedLeague.id}`]);
   }
 
-  filterFootballCompetitions(caption: string) {
+  filterFootballCompetitions(caption: string): FootballLeagues[] {
     return this.FootballCompetitions.filter(league =>
       league.caption.toLowerCase().indexOf(caption.toLowerCase()) === 0);
   }

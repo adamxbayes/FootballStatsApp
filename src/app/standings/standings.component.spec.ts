@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {FormControl} from '@angular/forms';
 import { StandingsComponent } from './standings.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpModule } from '@angular/http';
+
 
 describe('StandingsComponent', () => {
   let component: StandingsComponent;
@@ -8,7 +11,8 @@ describe('StandingsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StandingsComponent ]
+      declarations: [ StandingsComponent ],
+      imports :  [HttpModule],
     })
     .compileComponents();
   }));

@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {FormControl} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ClubsComponent } from './clubs.component';
+import { MatGridTile, MatGridList, MatCard, MatGridListModule } from '@angular/material';
+import {RouterOutlet } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 describe('ClubsComponent', () => {
   let component: ClubsComponent;
@@ -8,7 +14,9 @@ describe('ClubsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClubsComponent ]
+      declarations: [ ClubsComponent ],
+      imports: [MatGridTile, MatGridListModule, MatGridList, MatCard, AppRoutingModule],
+      providers: [RouterOutlet]
     })
     .compileComponents();
   }));
@@ -20,6 +28,6 @@ describe('ClubsComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(ClubsComponent).not.toBe(null);
   });
 });

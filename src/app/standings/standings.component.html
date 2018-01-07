@@ -1,61 +1,61 @@
 <div class="table-div">
-<mat-table #table [dataSource]="dataSource">
+<mat-table #table [dataSource]="dataSource" matSort>
 
 <!--Position column of table-->
 <ng-container matColumnDef="position">
-    <mat-header-cell *matHeaderCellDef> Position </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.position}} </mat-cell>
 </ng-container>
 <!--Team name column of table -->
 <ng-container matColumnDef="teamName">
-    <mat-header-cell *matHeaderCellDef> Club Name </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Club Name </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.teamName}} </mat-cell>
 </ng-container>
 <!-- crest column of table -->
 <ng-container matColumnDef="crestURI">
-    <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.crestUrI}} </mat-cell>
 </ng-container>
 <!--played games column of table -->
 <ng-container matColumnDef="playedGames">
-    <mat-header-cell *matHeaderCellDef> Matches played </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Matches played </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.playedGames}}</mat-cell>
 </ng-container>
 <!--goals scored column of table -->
 <ng-container matColumnDef="goals">
-    <mat-header-cell *matHeaderCellDef> GF </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> GF </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.goals}} </mat-cell>
 </ng-container>
 <!--goals conceded column of table -->
 <ng-container matColumnDef="goalsAgainst">
-    <mat-header-cell *matHeaderCellDef> GA </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> GA </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable">{{leagueTable.goalsAgainst}} </mat-cell>
 </ng-container>
 
 <!-- goals difference column of table -->
 <ng-container matColumnDef="goalDifference">
-    <mat-header-cell *matHeaderCellDef> GD </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> GD </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.goalsDifference}}</mat-cell>
     </ng-container>
 <!--wins column of table -->
 <ng-container matColumnDef="wins">
-    <mat-header-cell *matHeaderCellDef> W </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> W </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.wins}} </mat-cell>
 </ng-container>
 <!--draws column of table -->
 <ng-container matColumnDef="draws">
-    <mat-header-cell *matHeaderCellDef> D </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> D </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.draws}} </mat-cell>
 </ng-container>
 <!--losses column of table -->
 <ng-container matColumnDef="losses">
-    <mat-header-cell *matHeaderCellDef> L </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> L </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.losses}} </mat-cell>
 </ng-container>
 
 <!-- points column of table -->
 <ng-container matColumnDef="points">
-<mat-header-cell *matHeaderCellDef> Points </mat-header-cell>
+<mat-header-cell *matHeaderCellDef mat-sort-header> Points </mat-header-cell>
 <mat-cell *matCellDef="let leagueTable"> {{leagueTable.points}} </mat-cell>
 </ng-container>
 

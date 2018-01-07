@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatListModule, MatGridListModule, MatGridTile, MatExpansionModule, MatExpansionPanelActionRow } from '@angular/material';
+import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatListModule, MatGridListModule, MatGridTile, MatExpansionModule, MatExpansionPanelActionRow, MatSortHeader, MatSortModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -24,6 +24,8 @@ import { FootballPlayersRepository } from '../repositories/football-players.repo
 import { PlayersComponent } from './players/players.component';
 import { FixturesModule } from './fixtures/fixtures.component';
 import { StandingsComponent } from './standings/standings.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { StandingsComponent } from './standings/standings.component';
     RoutableComponents,
     PlayersComponent,
     FixturesModule,
-    StandingsComponent
+    StandingsComponent,
+    
     
   ],
   imports: [
@@ -55,7 +58,10 @@ import { StandingsComponent } from './standings/standings.component';
     MatDialogModule,
     MatExpansionModule,
     MatTableModule,
-    CdkTableModule
+    CdkTableModule,
+    RouterTestingModule,
+    MatSortModule,
+
   ],
   providers: [
     FootballApi,
