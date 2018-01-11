@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatTableModule, MatTableDataSource, } from '@angular/material/table';
-import { MatSortHeader, MatSortModule, Sort, MatSort } from '@angular/material';
+import { MatSortHeader, MatSortModule, Sort } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -17,7 +17,7 @@ import { RouterTestingModule } from '@angular/router/testing';
   styleUrls: ['./standings.component.css']
 })
 
-export class StandingsComponent implements OnInit {
+export class StandingsComponent {
 
   @Input()
   leagueId: Number;
@@ -26,14 +26,36 @@ export class StandingsComponent implements OnInit {
 
   dataSource: MatTableDataSource<Standings>;
 
+  sortedData;
+
   constructor(
     private footballStandingsRepository: FootballStandingsRepository
-  ){ }
+  ) { }
 
-  sortData(sort: Sort) {}
-  ngOnInit() {
-    this.footballStandingsRepository.getStandingsByLeague(this.leagueId).subscribe(result => {
-      this.dataSource = new MatTableDataSource<Standings>(result);
-    });
+
+  sortData(sort: Sort) {
+    let a: any;
+    let b: any;
+
+    const data = this.displayedColumns.slice();
+    if (!sort.active || sort.direction == '') {
+      this.sortedData = data;
+      return;
+    }
+
+ 
+
+    function compare(a, b, isAsc) {
+
+      return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+    }
+  }
+
+
+    ngOnInit() {
+      this.footballStandingsRepository.getStandingsByLeague(this.leagueId).subscribe(result => {
+        this.dataSource = new MatTableDataSource<Standings>(result);
+      });
+    }
   }
 }

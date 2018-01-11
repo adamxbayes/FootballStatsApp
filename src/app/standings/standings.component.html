@@ -11,11 +11,12 @@
     <mat-header-cell *matHeaderCellDef mat-sort-header> Club Name </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.teamName}} </mat-cell>
 </ng-container>
-<!-- crest column of table -->
+<!--crest columnn of table -->
 <ng-container matColumnDef="crestURI">
     <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> {{leagueTable.crestUrI}} </mat-cell>
+    <mat-cell *matCellDef="let leagueTable"> <img src="{{leagueTable.crestURI}}" height="15px" width="15px"> </mat-cell>
 </ng-container>
+
 <!--played games column of table -->
 <ng-container matColumnDef="playedGames">
     <mat-header-cell *matHeaderCellDef mat-sort-header> Matches played </mat-header-cell>
