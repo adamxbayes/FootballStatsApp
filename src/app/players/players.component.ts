@@ -8,6 +8,8 @@ import { List } from 'linqts';
 import { FootballPlayersRepository } from '../../repositories/football-players.repositories';
 import { ClubPlayers } from '../../models/football-players-model';
 import { FootballTeam } from '../../models/football-team-model';
+import { MatExpansionModule } from '@angular/material'
+
 
 @Component({
     selector: 'app-players',
@@ -21,39 +23,30 @@ export class PlayersComponent implements OnInit {
     public footballPlayers: Observable<ClubPlayers[]>;
     private leagueId: number;
     private selectedClubId: number;
-    private selectedPlayer: string;
+    private selectedPlayer: ClubPlayers;
     public selectedPlayerName: string;
-    
-    footballers: ClubPlayers[] = [];    
-   
+
+
+    footballers: ClubPlayers[] = [];
+
     constructor(private footballPlayersRepository: FootballPlayersRepository, private _router: Router,
         private _route: ActivatedRoute) {
-            
-        }
-        playerCtrl: FormControl = new FormControl();
 
-    /*filterFootballPlayers(name: string){
-            return this.footballPlayers.filter(player=>
-            player.name.toLowerCase().indexOf(name.toLowerCase()) === 0
-        }
-  
-    */
+    }
+    playerCtrl: FormControl = new FormControl();
 
-ngOnInit(){
 
-    this._route.params.subscribe(p=>{
+    ngOnInit() {
 
-        this.selectedClubId = Number(p['id']);
+        this._route.params.subscribe(p => {
+            this.selectedClubId = Number(p['teamId']);
+            this.footballPlayers = this.footballPlayersRepository.getPlayersByTeam(this.selectedClubId);
 
-        this.footballPlayers = this.footballPlayersRepository.getPlayersByTeam(this.selectedClubId);
+        })
+    }
+    selectPlayer(ClubPlayers) {
+        console.log(this.selectedPlayer);
 
-    })
-}
-
-selectPlayer(){
-var selectedPlayer = new List <ClubPlayers>(this.footballers).First(player => player.name == this.selectedPlayerName);
-    
-return (selectedPlayer.name, selectedPlayer.contractUntil, selectedPlayer.dateOfBirth, selectedPlayer.nationality, selectedPlayer.position);
-}
+    }
 
 }

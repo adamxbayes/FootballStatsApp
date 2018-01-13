@@ -9,8 +9,7 @@ constructor(
     public homeScore: number,
     public awayScore: number,
     
-    //On the database it shows an object called result, and in the result it shows home and away goals for each halve, need to extract these
-    //pieces of data and sum in to homeScore and awayScore.
+   // formatting can go as the following in a list item:             matchday, date, homeTeam, homeScore, awayScore, awayTeam
 
 
 ) {}

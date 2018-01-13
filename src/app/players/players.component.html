@@ -1,8 +1,10 @@
-<mat-card>
-    <mat-form-field>
-        <mat-select placeholder="Select a player">
+<mat-card id = "playerCard">
 
-            <mat-option *ngFor="let player of footballPlayers | async" [value]="player.name" (click)="selectPlayer(player.name)">
+
+    <mat-form-field>
+        <mat-select placeholder="Select a player" [(ngModel)]="selectedPlayer">
+
+            <mat-option *ngFor="let player of footballPlayers | async" id="playerSelect" [value]="player" (click)="selectPlayer(player.name)">
 
 
                 {{player.name | uppercase}}
@@ -10,9 +12,21 @@
             </mat-option>
 
         </mat-select>
-        <mat-hint *ngIf="!selectedPlayerName">
+        <mat-hint *ngIf="!selectedPlayer">
             A player is
             <strong>required</strong> if you want to see stats!
         </mat-hint>
 
     </mat-form-field>
+
+
+
+    <p id="playerStats">
+         {{ selectedPlayer?.name }}
+        <br> He is from {{selectedPlayer?.nationality}},
+        <br> Wears No: {{selectedPlayer?.jerseyNumber}},
+        <br> He is a {{selectedPlayer?.position}},
+        <br> Contract runs until: {{selectedPlayer?.contractUntil}},
+        <br> Birthday is on {{selectedPlayer?.dateOfBirth}},
+    </p>
+</mat-card>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatGridListModule, MatGridTile } from '@angular/material';
+import { MatGridListModule, MatGridTile, MatList } from '@angular/material';
 import { SearchLeagueComponent } from '../search-leagues/search-leagues.component';
 import { FootballTeam } from '../../models/football-team-model';
+import { FootballLeagues } from '../../models/football-leagues-model';
 import { FootballClubsRepository } from '../../repositories/football-teams.repository';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
@@ -21,6 +22,7 @@ export class ClubsComponent implements OnInit {
   private footballTeams: FootballTeam[];
   private leagueId: number;
   private selectedClubId: number;
+  public selectedLeague: FootballLeagues;
 
   constructor(
     private footballClubsRepository: FootballClubsRepository,
@@ -29,7 +31,7 @@ export class ClubsComponent implements OnInit {
 
   }
   public selectClub(id: Number): void {
-    this._router.navigate([`./teams/${id}`]);
+    this._router.navigate([`./teams/${id}/league/${this.leagueId}`]);
 
   }
   public returnToLeagues() {

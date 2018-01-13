@@ -1,0 +1,13 @@
+<mat-list role="list">
+    <mat-list-item *ngFor="let fixture of footballFixtures | async">
+    {{fixture.matchday}} : 
+    {{ fixture.homeTeam }} VS
+    {{ fixture.awayTeam}}
+    
+    {{ fixture.homeScore }} -
+    {{ fixture.awayScore }} :
+    
+        <span *ngIf="fixture.finished">Finished</span>
+        
+    </mat-list-item>
+</mat-list>

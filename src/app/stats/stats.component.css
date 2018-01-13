@@ -8,7 +8,7 @@ body {
     background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
     background-blend-mode: lighten;
     padding-top: 0%;
-    padding: 17.5%;
+    padding: 15%;
     min-height: 50%;
        
 
@@ -39,6 +39,11 @@ body {
   .example-full-width {
     width: 100%;
   }
+
+#playersDropDown, #fixturesDropDown, #tableDropDown{
+    font-family: 'Bungee', cursive;    
+    margin: auto;
+}
 
 
   
