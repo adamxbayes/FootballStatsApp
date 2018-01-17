@@ -17,7 +17,7 @@ export class FootballClubsRepository {
     public getTeamsByLeagueId(leagueId: number): Observable<FootballTeam[]> {
         return this._api.get(`competitions/${leagueId}/teams`).map(result => {
             let soccerClubs = [];
-            console.log(result);
+            
 
             result.teams.forEach(club => {
                 soccerClubs.push(

@@ -15,6 +15,9 @@ export class FootballApi {
             this.buildRequestOptions()).map(this.buildRequestResponse);
     }
 
+    //Builds the request, defines route as a string, sends off an observable to the private BASE_API_URL. After the /, we provide the headers which is the auth token for 
+    // that API. We then return a RequestOptions by calling the .buildRequestOptions which maps the JSON reponse to a variable named result.
+
     private buildRequestOptions(): RequestOptions {
         const headers = new Headers({
             'x-Auth-Token': '46f9705ba81a4774b067344f26366b70'

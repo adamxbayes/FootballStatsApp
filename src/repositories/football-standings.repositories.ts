@@ -19,7 +19,7 @@ export class FootballStandingsRepository {
 
        return this._api.get(`competitions/${leagueId}/leagueTable`).map(result => {
             let leagueTable = [];
-            console.log(result);
+           
 
             result.standing.forEach(league => {leagueTable.push( new FootballStandings(
                 league.position,

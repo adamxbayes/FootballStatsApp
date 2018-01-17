@@ -48,7 +48,7 @@ export class ClubsComponent implements OnInit {
       this.leagueId = Number(p['id']);
 
       this.footballClubsRepository.getTeamsByLeagueId(this.leagueId).subscribe(result => {
-        console.log(result);
+    
         this.footballTeams = result;
       });
     });

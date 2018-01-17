@@ -18,7 +18,7 @@ export class FootballPlayersRepository {
 
         return this._api.get(`teams/${ClubId}/players`).map(result => {
             let soccerPlayers = [];
-            console.log(result);
+          
         
             result.players.forEach(player => {
                 soccerPlayers.push(
@@ -31,7 +31,7 @@ export class FootballPlayersRepository {
                         player.nationality,
                         player.contractUntil)
                         )
-            console.log(ClubPlayers)});
+            });
             return soccerPlayers;
 
 

@@ -45,7 +45,7 @@
 </ng-container>
 <!--draws column of table -->
 <ng-container matColumnDef="draws">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> D </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> D </mat-header-cell>
     <mat-cell *matCellDef="let leagueTable"> {{leagueTable.draws}} </mat-cell>
 </ng-container>
 <!--losses column of table -->
@@ -64,4 +64,5 @@
 <mat-row *matRowDef="let leagueTable; columns: displayedColumns;"></mat-row>
 
 </mat-table>
+
 </div>

@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, AfterViewInit } from '@angular/core';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatListModule, MatGridListModule, MatGridTile, MatExpansionModule, MatExpansionPanelActionRow, MatSortHeader, MatSortModule, MatTooltipModule } from '@angular/material';
+import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatListModule, MatGridListModule, MatGridTile, MatExpansionModule, MatExpansionPanelActionRow, MatSortHeader, MatSortModule, MatTooltipModule, } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
+
 import { MatDialogModule} from '@angular/material/dialog';
 import { MatTableModule} from '@angular/material/table';
 import { AppRoutingModule, RoutableComponents } from './app-routing.module';
@@ -28,6 +29,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 import { RouterTestingModule } from '@angular/router/testing';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,7 @@ import { RouterTestingModule } from '@angular/router/testing';
     PlayersComponent,
     FixturesModule,
     StandingsComponent,
-    
+        
     
   ],
   imports: [
@@ -58,11 +60,11 @@ import { RouterTestingModule } from '@angular/router/testing';
     MatDialogModule,
     MatExpansionModule,
     MatTableModule,
+    MatSortModule,
     CdkTableModule,
     RouterTestingModule,
-    MatSortModule,
     MatTooltipModule,
-
+  
   ],
   providers: [
     FootballApi,
@@ -70,7 +72,7 @@ import { RouterTestingModule } from '@angular/router/testing';
     FootballClubsRepository,
     FootballPlayersRepository,
     FootballFixturesRepository,
-    FootballStandingsRepository
+    FootballStandingsRepository,
   ],
   bootstrap: [AppComponent]
 })

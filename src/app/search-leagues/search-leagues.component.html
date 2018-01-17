@@ -16,7 +16,7 @@
             <strong>required</strong>
           </mat-hint>
           <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let league of filteredFootballCompetitions | async" [value]="league.caption" (click)='selectLeague(league.id)'>
+            <mat-option *ngFor="let league of filteredFootballCompetitions | async" [value]="league.caption">
 
               <span>{{ league.caption | uppercase }}</span>
 
