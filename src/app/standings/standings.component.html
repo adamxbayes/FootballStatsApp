@@ -1,68 +1,69 @@
 <div class="table-div">
-<mat-table #table [dataSource]="dataSource" matSort>
+    <mat-table #table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)">
 
-<!--Position column of table-->
-<ng-container matColumnDef="position">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> {{leagueTable.position}} </mat-cell>
-</ng-container>
-<!--Team name column of table -->
-<ng-container matColumnDef="teamName">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Club Name </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> {{leagueTable.teamName}} </mat-cell>
-</ng-container>
-<!--crest columnn of table -->
-<ng-container matColumnDef="crestURI">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> <img src="{{leagueTable.crestURI}}" height="20px" width="20px"> </mat-cell>
-</ng-container>
+        <!--Position column of table-->
+        <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable"> {{leagueTable.position}} </mat-cell>
+        </ng-container>
+        <!--Team name column of table -->
+        <ng-container matColumnDef="teamName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Club Name </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable"> {{leagueTable.teamName}} </mat-cell>
+        </ng-container>
+        <!--crest columnn of table -->
+        <ng-container matColumnDef="crestURI">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable">
+                <img src="{{leagueTable.crestURI}}" height="20px" width="20px"> </mat-cell>
+        </ng-container>
 
-<!--played games column of table -->
-<ng-container matColumnDef="playedGames">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Matches played </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> {{leagueTable.playedGames}}</mat-cell>
-</ng-container>
-<!--goals scored column of table -->
-<ng-container matColumnDef="goals">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> GF </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> {{leagueTable.goals}} </mat-cell>
-</ng-container>
-<!--goals conceded column of table -->
-<ng-container matColumnDef="goalsAgainst">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> GA </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable">{{leagueTable.goalsAgainst}} </mat-cell>
-</ng-container>
+        <!--played games column of table -->
+        <ng-container matColumnDef="playedGames">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Matches played </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable"> {{leagueTable.playedGames}}</mat-cell>
+        </ng-container>
+        <!--goals scored column of table -->
+        <ng-container matColumnDef="goals">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> GF </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable"> {{leagueTable.goals}} </mat-cell>
+        </ng-container>
+        <!--goals conceded column of table -->
+        <ng-container matColumnDef="goalsAgainst">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> GA </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable">{{leagueTable.goalsAgainst}} </mat-cell>
+        </ng-container>
 
-<!-- goals difference column of table -->
-<ng-container matColumnDef="goalDifference">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> GD </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> {{leagueTable.goalsDifference}}</mat-cell>
-    </ng-container>
-<!--wins column of table -->
-<ng-container matColumnDef="wins">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> W </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> {{leagueTable.wins}} </mat-cell>
-</ng-container>
-<!--draws column of table -->
-<ng-container matColumnDef="draws">
-    <mat-header-cell *matHeaderCellDef> D </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> {{leagueTable.draws}} </mat-cell>
-</ng-container>
-<!--losses column of table -->
-<ng-container matColumnDef="losses">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> L </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> {{leagueTable.losses}} </mat-cell>
-</ng-container>
+        <!-- goals difference column of table -->
+        <ng-container matColumnDef="goalDifference">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> GD </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable"> {{leagueTable.goalsDifference}}</mat-cell>
+        </ng-container>
+        <!--wins column of table -->
+        <ng-container matColumnDef="wins">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> W </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable"> {{leagueTable.wins}} </mat-cell>
+        </ng-container>
+        <!--draws column of table -->
+        <ng-container matColumnDef="draws">
+            <mat-header-cell *matHeaderCellDef> D </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable"> {{leagueTable.draws}} </mat-cell>
+        </ng-container>
+        <!--losses column of table -->
+        <ng-container matColumnDef="losses">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> L </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable"> {{leagueTable.losses}} </mat-cell>
+        </ng-container>
 
-<!-- points column of table -->
-<ng-container matColumnDef="points">
-<mat-header-cell *matHeaderCellDef mat-sort-header> Points </mat-header-cell>
-<mat-cell *matCellDef="let leagueTable"> {{leagueTable.points}} </mat-cell>
-</ng-container>
+        <!-- points column of table -->
+        <ng-container matColumnDef="points">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Points </mat-header-cell>
+            <mat-cell *matCellDef="let leagueTable"> {{leagueTable.points}} </mat-cell>
+        </ng-container>
 
-<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-<mat-row *matRowDef="let leagueTable; columns: displayedColumns;"></mat-row>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let leagueTable; columns: displayedColumns;"></mat-row>
 
-</mat-table>
+    </mat-table>
 
 </div>

@@ -7,7 +7,7 @@ import { Observable } from "rxjs/Observable";
 @Injectable()
 export class FootballApi {
     private BASE_API_URL: string = 'http://api.football-data.org/v1';
-
+    private FFT_API_URL: string = ''
     constructor(private _http: Http) { }
 
     public get(route: string): Observable<any> {
@@ -33,6 +33,21 @@ export class FootballApi {
             result = response.json();
         }
 
+        return result;
+    }
+
+    private buildFFTRequestOptions(): RequestOptions {
+        const headers = new Headers({
+            'x-Auth-Token' : 'e6f6dd17abf3440e8e64849b0cc0c8a1'
+        })
+        return new RequestOptions ({headers : headers});
+    }
+    private buildFFTRequestResponse(response: Response): any {
+        let result;
+
+        if (response.text()) {
+            result = response.json();
+        }
         return result;
     }
 }
