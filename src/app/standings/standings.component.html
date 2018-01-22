@@ -8,8 +8,8 @@
 </ng-container>
 <!--Team name column of table -->
 <ng-container matColumnDef="teamName">
-    <mat-header-cell *matHeaderCellDef> Club Name </mat-header-cell>
-    <mat-cell *matCellDef="let leagueTable"> {{leagueTable.teamName}} </mat-cell>
+    <mat-header-cell *matHeaderCellDef min-width="200px"> Club Name </mat-header-cell>
+    <mat-cell *matCellDef="let leagueTable" min-width="200px"> {{leagueTable.teamName}} </mat-cell>
 </ng-container>
 <!-- crest column of table -->
 <ng-container matColumnDef="crestURI">
