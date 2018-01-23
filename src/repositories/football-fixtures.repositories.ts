@@ -18,7 +18,7 @@ export class FootballFixturesRepository {
 
         return this._api.get(`teams/${ClubId}/fixtures`).map(result => {
             let soccerFixtures = [];
-            console.log(result);
+        
 
             result.fixtures.forEach(fixture => {
 

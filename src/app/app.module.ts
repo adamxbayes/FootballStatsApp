@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, AfterViewInit } from '@angular/core';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatListModule, MatGridListModule, MatGridTile, MatExpansionModule, MatExpansionPanelActionRow } from '@angular/material';
+import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatSlideToggleModule, MatListModule, MatGridListModule, MatGridTile, MatExpansionModule, MatExpansionPanelActionRow, MatSortModule, MatSort } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -55,7 +55,9 @@ import { StandingsComponent } from './standings/standings.component';
     MatDialogModule,
     MatExpansionModule,
     MatTableModule,
-    CdkTableModule
+    CdkTableModule,
+    MatSort,
+    MatSortModule,
   ],
   providers: [
     FootballApi,
