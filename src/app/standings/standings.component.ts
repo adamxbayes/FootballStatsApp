@@ -6,10 +6,11 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { FootballStandingsRepository } from '../../repositories/football-standings.repositories';
 import { FootballClubsRepository } from '../../repositories/football-teams.repository';
-import { FootballStandings, Standings } from '../../models/football-standings-model';
+import { FootballStandings } from '../../models/football-standings-model';
 import { NumberValueAccessor } from '@angular/forms/src/directives/number_value_accessor';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DataSource } from '@angular/cdk/collections';
+import {FootballTeam} from '../../models/football-team-model';
 
 @Component({
   selector: 'app-standings',
@@ -22,16 +23,19 @@ export class StandingsComponent {
   @Input()
   
   leagueId: Number;
-
+  standings = FootballStandings
   displayedColumns = ['position', 'teamName', 'crestURI', 'playedGames', 'goals', 'goalsAgainst', 'goalDifference', 'wins', 'draws', 'losses', 'points'];
 
   constructor(
     private footballStandingsRepository: FootballStandingsRepository
   ) { }
-
+  dataSource: MatTableDataSource<FootballStandings>;
 
   ngOnInit() {
-    this.footballStandingsRepository.getStandingsByLeague(this.leagueId).subscribe(result => { });
+    this.footballStandingsRepository.getStandingsByLeague(this.leagueId).subscribe(result => { 
+       this.dataSource = new MatTableDataSource<FootballStandings>(result);
+          });
+     
   }
 
 
