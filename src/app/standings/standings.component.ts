@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
-import { MatTableDataSource, MatSortModule, MatSort } from '@angular/material';
+import { MatTableModule, MatTableDataSource, } from '@angular/material/table';
+import { MatSortHeader, MatSortModule, MatSort, MatTooltipModule,  } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -8,8 +8,9 @@ import { FootballStandingsRepository } from '../../repositories/football-standin
 import { FootballClubsRepository } from '../../repositories/football-teams.repository';
 import { FootballStandings } from '../../models/football-standings-model';
 import { NumberValueAccessor } from '@angular/forms/src/directives/number_value_accessor';
-import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { DataSource } from '@angular/cdk/collections';
+import { FootballTeam} from '../../models/football-team-model';
 
 @Component({
   selector: 'app-standings',
@@ -17,41 +18,29 @@ import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
   styleUrls: ['./standings.component.css']
 })
 
-export class StandingsComponent implements OnInit {
+export class StandingsComponent {
 
-
-  @Input()  
+  @ViewChild(MatSort)sort :MatSort;
+  @Input()
+  
   leagueId: Number;
-  result: FootballStandings [];
+  standings = FootballStandings
   displayedColumns = ['position', 'teamName', 'crestURI', 'playedGames', 'goals', 'goalsAgainst', 'goalDifference', 'wins', 'draws', 'losses', 'points'];
-  dataSource : MatTableDataSource<FootballStandings>;
-
-  @ViewChild(MatSort) sort: MatSort;
 
   constructor(
-    private footballStandingsRepository: FootballStandingsRepository) { }
+    private footballStandingsRepository: FootballStandingsRepository
+  ) { }
+  dataSource: MatTableDataSource<FootballStandings>;
 
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-  }
   ngOnInit() {
-    this.footballStandingsRepository.getStandingsByLeague(this.leagueId).subscribe(result => {
-      this.dataSource = new MatTableDataSource<FootballStandings>(this.result);
-  
-    })
+    this.footballStandingsRepository.getStandingsByLeague(this.leagueId).subscribe(result => { 
+       this.dataSource = new MatTableDataSource<FootballStandings>(result);
+       this.dataSource.sort = this.sort;
+          });
+     
   }
-}
 
-export interface Standings {
-  position: Number,
-  teamName: String,
-  crestURI: String,
-  playedGames: Number,
-  points: Number,
-  goals: Number,
-  goalsAgainst: Number,
-  goalsDifference: Number,
-  wins: Number,
-  draws: Number,
-  losses: Number
+
+
+
 }
