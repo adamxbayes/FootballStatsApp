@@ -27,6 +27,8 @@ import { FixturesModule } from './fixtures/fixtures.component';
 import { StandingsComponent } from './standings/standings.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NewsComponent } from './news/news.component';
+import { FootballNewsRepository } from '../repositories/football-news.repositories';
 
 
 
@@ -37,6 +39,7 @@ import { RouterTestingModule } from '@angular/router/testing';
     PlayersComponent,
     FixturesModule,
     StandingsComponent,
+    NewsComponent,
         
     
   ],
@@ -73,6 +76,7 @@ import { RouterTestingModule } from '@angular/router/testing';
     FootballPlayersRepository,
     FootballFixturesRepository,
     FootballStandingsRepository,
+    FootballNewsRepository
   ],
   bootstrap: [AppComponent]
 })

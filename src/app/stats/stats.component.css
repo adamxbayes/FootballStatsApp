@@ -40,7 +40,7 @@ body {
     width: 100%;
   }
 
-#playersDropDown, #fixturesDropDown, #tableDropDown{
+#playersDropDown, #fixturesDropDown, #tableDropDown, #newsDropDown{
     font-family: 'Bungee', cursive;    
     margin: auto;
 }
