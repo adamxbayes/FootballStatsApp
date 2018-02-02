@@ -21,7 +21,7 @@ body {
     
 }
 #innerHeading p{
-    font-family: 'Bungee', cursive;
+    font-family: 'Expletus Sans', cursive;
     font-size: 30px;
     text-align: center;
 }
@@ -41,7 +41,7 @@ body {
   }
 
 #playersDropDown, #fixturesDropDown, #tableDropDown, #newsDropDown{
-    font-family: 'Bungee', cursive;    
+    font-family: 'Expletus Sans', cursive;  
     margin: auto;
 }
 

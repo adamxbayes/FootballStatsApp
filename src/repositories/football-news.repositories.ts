@@ -3,21 +3,29 @@ import { FootballNews } from "../models/football-news-model";
 import { FootballApi } from './football-api';
 import { FootballLeaguesRepository } from "./football-leagues.repositories";
 import { Observable } from "rxjs/Observable";
-@Injectable()
 
+@Injectable()
 export class FootballNewsRepository {
 
-private FootballNews :  FootballNews[] = [];
+  private FootballNews: FootballNews[] = [];
 
-constructor (private _api: FootballApi) {}
+  constructor(private _api: FootballApi) { }
 
-public getAll(): Observable<FootballNews[]> {
-  return this._api.get('').map(result => {
-    let footyNews = [];
-    result.array.forEach(article => {footyNews.push(new FootballNews(article.id, article.name, article.description, article.url, article.urlToImage,article.publishedAt))
-    });
-    return footyNews;
-      
+  public getAll(): Observable<FootballNews[]> {
+    return this._api.getAll('top-headlines').map(result => {
+      let footyNews = [];
+      result.articles.array.forEach(article => {
+        footyNews.push(new FootballNews(
+          article.id,
+          article.name,
+          article.description,
+          article.url,
+          article.urlToImage,
+          article.publishedAt))
+      });
+      console.log(result);
+      return footyNews;
+
     });
   }
 }
