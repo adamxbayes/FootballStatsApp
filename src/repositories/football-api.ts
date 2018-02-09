@@ -8,6 +8,7 @@ import { Observable } from "rxjs/Observable";
 export class FootballApi {
     private BASE_API_URL: string = 'http://api.football-data.org/v1';
     private FFT_API_URL: string = 'https://newsapi.org/v2';
+    private sources: string = '?sources=four-four-two';
     constructor(private _http: Http) { }
 
     public get(route: string): Observable<any> {
@@ -16,7 +17,7 @@ export class FootballApi {
     }
 
     public getAll(route: string): Observable<any> {
-        return this._http.get(`${this.FFT_API_URL}/${route}`,
+        return this._http.get(`${this.FFT_API_URL}/top-headlines/${this.sources}`,
             this.buildFFTRequestOptions()).map(this.buildFFTRequestResponse);
     }
 

@@ -19,16 +19,8 @@ export class SearchLeagueComponent implements OnInit {
   filteredFootballCompetitions: Observable<any[]>;
   stateCtrl: FormControl;
   public selectedLeagueCaption: string;
-
-  //Referencing the models which store instances of objects (drop down lists)
   public FootballCompetitions: FootballLeagues[] = [];
-
-
-
-  //observable...something to do with making continuous requests and not reloading full page?
-
   myControl: FormControl = new FormControl();
-  //the export part above, allows this class to be imported.
 
   public goToClubs() {
     var selectedLeague = new List<FootballLeagues>(this.FootballCompetitions)

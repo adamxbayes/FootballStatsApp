@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { PlayersComponent } from '../players/players.component';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatListModule} from '@angular/material';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material';
 
 @Component({
   selector: 'app-stats',
@@ -13,8 +12,8 @@ import {MatListModule} from '@angular/material';
 export class StatsComponent implements OnInit {
 
   public leagueId: number;
-
   [x: string]: any;
+
   constructor(private _router: Router, private _route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -25,12 +24,11 @@ export class StatsComponent implements OnInit {
   }
 
   public returnToLeagues() {
-
     this._router.navigate(['']);
   }
-  public goToClubs(){
-'clubs/:id'
+
+  public goToClubs() {
+    'clubs/:id'
     this._router.navigate(['clubs/:id']);
   }
-
 }

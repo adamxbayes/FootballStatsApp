@@ -10,12 +10,10 @@ import { ClubPlayers } from '../../models/football-players-model';
 import { FootballTeam } from '../../models/football-team-model';
 import { MatExpansionModule } from '@angular/material'
 
-
 @Component({
     selector: 'app-players',
     templateUrl: 'players.component.html',
     styleUrls: ['players.component.css']
-
 })
 
 export class PlayersComponent implements OnInit {
@@ -25,7 +23,6 @@ export class PlayersComponent implements OnInit {
     private selectedClubId: number;
     private selectedPlayer: ClubPlayers;
     public selectedPlayerName: string;
-
 
     footballers: ClubPlayers[] = [];
 

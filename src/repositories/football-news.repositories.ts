@@ -12,7 +12,9 @@ export class FootballNewsRepository {
   constructor(private _api: FootballApi) { }
 
   public getAll(): Observable<FootballNews[]> {
+
     return this._api.getAll('top-headlines').map(result => {
+      
       let footyNews = [];
       result.articles.array.forEach(article => {
         footyNews.push(new FootballNews(
